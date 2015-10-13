@@ -69,6 +69,15 @@ Bool_t TRapidIOSystem::Init()
 //---- RPC ---------------------------------------------------------------------
 
 ////////////////////////////////////////////////////////////////////////////////
+/// Get Internet Protocol (IP) address of remote host and port #.
+
+TInetAddress TRapidIOSystem::GetPeerName(int sock)
+{
+  ::Info("TRapidIOSystem::GetPeerName", "Done.");
+  return TInetAddress();
+}
+
+////////////////////////////////////////////////////////////////////////////////
 /// Connect to service servicename on server servername.
 
 int TRapidIOSystem::ConnectService(const char *servername, int port,
@@ -524,4 +533,12 @@ int TRapidIOSystem::RapidIOSend(int sock, const void *buffer, int length, int fl
    // return n;
 }
 
+////////////////////////////////////////////////////////////////////////////////
+/// Get socket option.
 
+int TRapidIOSystem::GetSockOpt(int sock, int opt, int *val)
+{
+  *val = 1;
+  ::Info("TRapidIOSystem::GetSockOpt", "Done.");
+   return 0;
+}

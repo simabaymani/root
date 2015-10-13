@@ -53,6 +53,7 @@ public:
    Bool_t            Init();
 
    //---- RPC --------------------------------------------------
+   TInetAddress      GetPeerName(int sock);
    int               ConnectService(const char *server, int port, int tcpwindowsize, const char *protocol = "tcp");
    int               OpenConnection(const char *server, int port, int tcpwindowsize = -1, const char *protocol = "tcp");
    int               AnnounceTcpService(int port, Bool_t reuse, int backlog, int tcpwindowsize = -1);
@@ -62,6 +63,7 @@ public:
    int               SendRaw(int sock, const void *buffer, int length, int flag);
    int               RecvBuf(int sock, void *buffer, int length);
    int               SendBuf(int sock, const void *buffer, int length);
+   int               GetSockOpt(int sock, int option, int *val);
 
    ClassDef(TRapidIOSystem,0)  //Interface to RapidIO framework
 };

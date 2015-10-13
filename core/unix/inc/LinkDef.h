@@ -15,5 +15,6 @@
 #pragma link off all functions;
 
 #pragma link C++ class TUnixSystem;
+#pragma link C++ class TRapidIOSystem;
 
 #endif

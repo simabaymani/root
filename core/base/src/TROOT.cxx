@@ -142,7 +142,8 @@ namespace std {} using namespace std;
 #include "TMacOSXSystem.h"
 #include "TUrl.h"
 #else
-#include "TUnixSystem.h"
+//#include "TUnixSystem.h"
+#include "TRapidIOSystem.h"
 #endif
 #elif defined(R__WIN32)
 #include "TWinNTSystem.h"
@@ -1599,7 +1600,8 @@ void TROOT::InitSystem()
 #if defined(R__HAS_COCOA)
       gSystem = new TMacOSXSystem;
 #else
-      gSystem = new TUnixSystem;
+      //      gSystem = new TUnixSystem;
+      gSystem = new TRapidIOSystem;
 #endif
 #elif defined(R__WIN32)
       gSystem = new TWinNTSystem;

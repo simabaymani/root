@@ -46,19 +46,24 @@ ClassImp(TRapidIOSystem)
 ////////////////////////////////////////////////////////////////////////////////
 
 TRapidIOSystem::TRapidIOSystem() : TUnixSystem()
-{ }
+{
+  ::Info("TRapidIOSystem::TRapidIOSystem", "Done.");
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 /// Reset to original state.
 
 TRapidIOSystem::~TRapidIOSystem()
-{ }
+{
+  ::Info("TRapidIOSystem::~TRapidIOSystem", "Done.");
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 /// Initialize RapidIO system interface.
 
 Bool_t TRapidIOSystem::Init()
 {
+  ::Info("TRapidIOSystem::Init", "Done.");
    if (TUnixSystem::Init())
       return kTRUE;
 
